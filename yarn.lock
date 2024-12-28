@@ -1621,6 +1621,11 @@ hls.js@^1.5.17:
   resolved "https://registry.yarnpkg.com/hls.js/-/hls.js-1.5.18.tgz#f0279072c31ba763efc08b6c7dff0f10f0703db0"
   integrity sha512-znxR+2jecWluu/0KOBqUcvVyAB5tLff10vjMGrpAlz1eFY+ZhF1bY3r82V+Bk7WJdk03iTjtja9KFFz5BrqjSA==
 
+husky@^9.1.7:
+  version "9.1.7"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-9.1.7.tgz#d46a38035d101b46a70456a850ff4201344c0b2d"
+  integrity sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==
+
 ieee754@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
