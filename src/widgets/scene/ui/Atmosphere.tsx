@@ -7,7 +7,7 @@ import { DoubleSide, Mesh } from "three";
 extend({ CloudMaterial });
 
 function Atmosphere() {
-  const { scene } = useGLTF("/src/assets/models/atmosphere.gltf");
+  const { scene } = useGLTF("/models/atmosphere.gltf");
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();

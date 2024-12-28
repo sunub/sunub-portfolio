@@ -8,8 +8,9 @@ import { PlanetMaterial } from "../lib/materials/PlanetMaterial";
 extend({ PlanetMaterial });
 
 function Planet() {
-  const { scene } = useGLTF("/src/assets/models/planetBright.gltf");
+  const { scene } = useGLTF("/models/planetBright.gltf");
   const materialRef = useRef<ShaderMaterial>(null!);
+  const meshRef = useRef<Mesh>(null!);
 
   useFrame((state) => {
     if (materialRef.current) {
@@ -36,7 +37,7 @@ function Planet() {
     });
   }, [scene]);
 
-  return <primitive scale={1} object={scene} />;
+  return <primitive ref={meshRef} scale={1} object={scene} />;
 }
 
 export { Planet };

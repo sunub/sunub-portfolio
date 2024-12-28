@@ -10,7 +10,7 @@ function CustomStars() {
   useFrame(({ clock }) => {
     if (!groupRef.current) return;
     const t = clock.getElapsedTime();
-    groupRef.current.rotation.y = -t * 0.005;
+    groupRef.current.rotation.y = -t * 0.001;
     groupRef.current.position.y = Math.sin(t * 0.2) * 0.2;
   });
 

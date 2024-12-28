@@ -4,16 +4,14 @@ import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { CustomStars } from "./ui/CustomStars";
 import { Land } from "./ui/Land";
 import { Planet } from "./ui/Planet";
-import { Cystal } from "./ui/Crystal";
-import { TreeLights } from "./ui/TreeLights";
 import { Atmosphere } from "./ui/Atmosphere";
-import { TreeBranches } from "./ui/TreeBranches";
+import { CameraRig } from "./ui/CamerRig";
 
 function Scene() {
   return (
-    <Canvas className="max-h-[910px]">
+    <Canvas>
       <color attach="background" args={["#05001d"]} />
-      <PerspectiveCamera makeDefault position={[0, 0, -78]} fov={6} />
+      <PerspectiveCamera makeDefault position={[0, 0, -78]} fov={13} />
       <OrbitControls
         enableZoom={false}
         enablePan={false}
@@ -27,9 +25,7 @@ function Scene() {
       <Planet />
       <Atmosphere />
       <Land />
-      <TreeBranches />
-      <TreeLights />
-      <Cystal />
+      <CameraRig />
 
       <EffectComposer>
         <Bloom luminanceThreshold={0.2} intensity={2} levels={5} mipmapBlur />
