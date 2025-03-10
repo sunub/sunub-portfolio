@@ -25,3 +25,4 @@ dist-ssr
 
 # 코드 품질 관리
 .husky/_
+stats.html
