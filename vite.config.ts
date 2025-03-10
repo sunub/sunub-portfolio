@@ -44,16 +44,16 @@ export default defineConfig({
         },
         manualChunks(id) {
           if (
-            id.includes("react") ||
-            id.includes("react-dom") ||
+            id.includes("node_modules/react") ||
+            id.includes("node_modules/react-dom") ||
             id.includes("@react-three")
           ) {
-            return "vendor-react-all";
+            return "vendor-react";
           }
-          if (id.includes("three")) {
-            return "vendor-three-all";
+          if (id.includes("node_modules/three")) {
+            return "vendor-three";
           }
-          if (id.includes("@dimforge/rapier3d")) {
+          if (id.includes("node_modules/@dimforge/rapier3d")) {
             return "vendor-rapier";
           }
           if (id.includes("node_modules")) {
