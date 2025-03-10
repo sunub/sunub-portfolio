@@ -19,13 +19,7 @@ export default defineConfig({
   },
   publicDir: "public",
   build: {
-    minify: "terser",
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
+    minify: "esbuild",
     assetsDir: "assets",
     modulePreload: {
       polyfill: true,
