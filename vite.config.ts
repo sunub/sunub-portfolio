@@ -1,10 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import { visualizer } from "rollup-plugin-visualizer";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), visualizer()],
   base: "/",
   assetsInclude: ["**/*.glb", "**/*.hdr", "**/*.gltf", "**/*.bin"],
   resolve: {
@@ -18,12 +19,23 @@ export default defineConfig({
   },
   publicDir: "public",
   build: {
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
     assetsDir: "assets",
+    modulePreload: {
+      polyfill: true,
+    },
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, "index.html"),
       },
       output: {
+        experimentalMinChunkSize: 30000,
         chunkFileNames: "assets/js/[name]-[hash].js",
         entryFileNames: "assets/js/[name]-[hash].js",
         assetFileNames: (assetInfo) => {
