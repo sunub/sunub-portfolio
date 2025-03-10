@@ -38,19 +38,13 @@ export default defineConfig({
         },
         manualChunks(id) {
           if (id.includes("node_modules")) {
-            if (id.includes("@dimforge/rapier3d")) {
-              return "vendor-rapier";
-            } else if (id.includes("@react-three/drei")) {
+            if (id.includes("@dimforge/rapier3d")) return "vendor-raiper3d";
+            if (id.includes("@react-three/drei"))
               return "vendor-react-three-drei";
-            } else if (id.includes("@react-three/fiber")) {
+            if (id.includes("@react-three/fiber"))
               return "vendor-react-three-fiber";
-            } else if (id.includes("@react-three")) {
-              return "vendor-react-three";
-            } else if (id.includes("three")) {
-              return "vendor-three";
-            } else if (id.includes("react") || id.includes("react-dom")) {
-              return "vendor-react";
-            }
+            if (id.includes("three")) return "vendor-three";
+            if (id.includes("react")) return "vendor-react";
 
             return "vendor";
           }
